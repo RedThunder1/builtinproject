@@ -1,20 +1,20 @@
-def replaceChar(inputStr: str, replaceChar: str, newChar: str):
+def replaceChar(inputStr: str, rChar: str, newChar: str):
     """
-    My version of replace.
-    This function will replace all the specified characters with the new characters
+    My version of replaceChar.
+    This function will replaceChar all the specified characters with the new characters
 
     Parameters
     inputStr: The string you want to change
     replaceChar: The characters you want to change
-    newChar: The character to replace with
+    newChar: The character to replaceChar with
 
-    Limitations
-    This function can only replace characters and nothing else I may eventually make it so you can replace words and phrases.
+    Limitations This function can only replaceChar characters and nothing else I may eventually make it so you can
+     replaceChar words and phrases.
     """
     index = [0, 0]
     finalStr = ""
     for c in inputStr:
-        if c == replaceChar:
+        if c == rChar:
             finalStr += newChar
             index[1] = index[0]
         else:
