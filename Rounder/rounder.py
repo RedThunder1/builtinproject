@@ -36,21 +36,18 @@ def __simpleRound():
     global decimals, wholeNum, checked
     i = 2
     while not checked:
-        print(f"Dec: {decimals}")
         if len(decimals) == 2 and float(decimals[1]) < 5:
             checked = True
             return wholeNum
         if len(decimals) == 2 and float(decimals[1]) > 4:
             checked = True
             return wholeNum + 1
-        print(f"Len: {len(decimals)}  Index: {i}")
         if float(decimals[i]) > 4:
             if i == 1:
                 checked = True
                 return wholeNum + 1
             else:
                 decimals = decimals[:i - 1] + str(int(decimals[i - 1]) + 1)
-                print(f"len: {len(decimals)}  dec: {decimals}")
                 i = 2
         elif len(decimals) == i + 1:
             return wholeNum
