@@ -5,6 +5,12 @@ lowerChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
 
 
 def swapCase(inputStr: str):
+    """
+    Parameters
+    inputStr: The string you want to change.
+
+    This function swaps the cases of all characters so if its upper it becomes lower and lower becomes upper.
+    """
     newStr = ""
     for char in inputStr:
         if char.isalpha():
@@ -28,6 +34,12 @@ def swapCase(inputStr: str):
 
 
 def toUpper(inputStr: str):
+    """
+    Parameters
+    inputStr: The string you want to change.
+
+    This function swaps the cases of all lower characters so everything becomes uppercase
+    """
     newStr = ""
     for char in inputStr:
         if char.isalpha():
@@ -46,6 +58,12 @@ def toUpper(inputStr: str):
 
 
 def toLower(inputStr: str):
+    """
+    Parameters
+    inputStr: The string you want to change.
+
+    This function swaps the cases of all upper characters so everything becomes lowercase
+    """
     newStr = ""
     for char in inputStr:
         if char.isalpha():

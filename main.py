@@ -1,4 +1,4 @@
 from Rounder.rounder import rounder
 
 
-print(rounder(1.44444444444444447))
+print(rounder(1.244545687975, 2))
