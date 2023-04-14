@@ -1,6 +1,4 @@
-from swapCase.changeCase import swapCase, toUpper, toLower
+from Rounder.rounder import rounder
 
 
-print(swapCase("Testing This FuncTions 121"))
-print(toLower("This IS a LOWER case STRING"))
-print(toUpper("This is a UPpeR case string"))
+print(rounder(1.44444444444444447))
