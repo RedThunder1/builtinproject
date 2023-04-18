@@ -2,10 +2,9 @@ def rounder(inputNum: float, roundPlace: int = 0):
     """
     Parameters:
     inputNum: The number you want to be rounded
-    roundPlace: To what decimal place you want to round the number.  If 0 it rounds to a whole number.
+    roundPlace: To what decimal place you want to round the number.  If 0 or empty it rounds to a whole number.
 
-    For now, it rounds to a whole number, but I may make it so you can make it round to a certain place.
-    It is also limited to 16 decimal places.
+    This function is limited to 16 decimal places otherwise it breaks.
     """
     strNum = str(inputNum)
     wholeNum = int(strNum[:strNum.find('.')])
@@ -31,7 +30,7 @@ def rounder(inputNum: float, roundPlace: int = 0):
 def _rounder(inputNum, roundPlace):
     """
     Function used for rounding
-    Will round to specified rounding place
+    Can round to specified rounding place
     """
     strNum = str(inputNum)
     decimals = strNum[strNum.find('.'):]
