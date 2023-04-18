@@ -1,19 +1,12 @@
-decimals: str
-wholeNum: int
-rndPlace: int
-checked = False
-
-
 def rounder(inputNum: float, roundPlace: int = 0):
     """
     Parameters:
     inputNum: The number you want to be rounded
-    roundPlace: To what decimal place you want to round the number.  If 0 or None it will round to a whole number.
+    roundPlace: To what decimal place you want to round the number.  If 0 it rounds to a whole number.
 
     For now, it rounds to a whole number, but I may make it so you can make it round to a certain place.
     It is also limited to 16 decimal places.
     """
-    global decimals, wholeNum, rndPlace
     strNum = str(inputNum)
     wholeNum = int(strNum[:strNum.find('.')])
     decimals = strNum[strNum.find('.'):]
@@ -22,53 +15,30 @@ def rounder(inputNum: float, roundPlace: int = 0):
         if float(decimals[1]) >= 5:
             return wholeNum + 1
         elif float(decimals[1]) == 4:
-            return _simpleRound()
+            num = _rounder(inputNum, 1)
+            strNum = str(num)
+            if float(strNum[2]) > 4:
+                return wholeNum + 1
+            else:
+                return wholeNum
         elif float(decimals[1]) < 4:
             return wholeNum
     else:
         # Complex Rounding
-        rndPlace = roundPlace
-        return _complexRounder()
+        return _rounder(inputNum, roundPlace)
 
 
-def _simpleRound():
+def _rounder(inputNum, roundPlace):
     """
-    Function used for simple rounding
-    Will round to a whole number
-
-    THis function is a mess and will be cleaned up later because im lazy
-    """
-    global decimals, wholeNum, checked
-    i = 2
-    while not checked:
-        if len(decimals) == 2 and float(decimals[1]) < 5:
-            checked = True
-            return wholeNum
-        if len(decimals) == 2 and float(decimals[1]) > 4:
-            checked = True
-            return wholeNum + 1
-        if float(decimals[i]) > 4:
-            if i == 1:
-                checked = True
-                return wholeNum + 1
-            else:
-                decimals = decimals[:i - 1] + str(int(decimals[i - 1]) + 1)
-                i = 2
-        elif len(decimals) == i + 1:
-            return wholeNum
-        else:
-            i += 1
-
-
-def _complexRounder():
-    """
-    Function used for complex rounding
+    Function used for rounding
     Will round to specified rounding place
     """
-    global decimals, wholeNum, checked, rndPlace
-    i = 1 + rndPlace
-    while not checked:
-        if len(decimals) == rndPlace + 1:
+    strNum = str(inputNum)
+    decimals = strNum[strNum.find('.'):]
+    wholeNum = int(strNum[:strNum.find('.')])
+    i = 1 + roundPlace
+    while True:
+        if len(decimals) == roundPlace + 1:
             return float(wholeNum) + float(decimals)
         else:
             if float(decimals[i]) > 4:
