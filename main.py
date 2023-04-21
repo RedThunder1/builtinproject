@@ -4,7 +4,8 @@ TEST_NUM: int = 0
 
 def run_test(rounded_value: float, expected_value: float) -> None:
 	'''
-	prints if the test passes or not
+	prints if the test passes or not. if a test doesn't pass
+	it prints the rounded and expected value
 
 	Parameters
 	----------
