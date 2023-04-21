@@ -34,7 +34,7 @@ run_test( rounder(3.45631, 3), 3.456 )  # fails, doesn't cut off excess numbers
 run_test( rounder(3.45691, 3), 3.457 )  # suprisingly passes because excess is cut off
 run_test( rounder('aethese #1', 1), 0 )  # no built-in checks to see if passed in value is what we expect
 run_test( rounder(3.14, 5), 0 )  # no built-in checks here either
-run_test( rounder(3.99, 1), 4 )  # failes, we somehow get 3.1 LMAO
+run_test( rounder(3.99, 1), 4 )  # fails, we somehow get 3.1 LMAO
 run_test( rounder(3.44512), 4 )  # suprisingly passes??? ok
 run_test( rounder(2.444444444445), 3 )
 run_test( rounder(-3.5), -4 )  # returns -2 LOL
