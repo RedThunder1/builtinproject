@@ -23,7 +23,6 @@ def run_test(rounded_value: float, expected_value: float) -> None:
 	if not passed:
 		print(f'Rounded value: {rounded_value} | Expected: {expected_value}')
 
-# added comments on tests that deserve to be looked at or acknowledged in some way :)
 
 # test #3-#13 were taken with permission from here:
 # https://github.com/Aethese/rounder/blob/main/tests.py
